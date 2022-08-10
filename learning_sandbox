@@ -1,0 +1,69 @@
+//
+//  main.cpp
+//  funsandbox
+//
+//  Created by Kyle Gibson on 8/10/22.
+//
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    cout << "Welcome to my Sandbox!" << endl;
+    cout << "\n---------------------------------------" << endl;
+    cout << "\nThis is used to challenge and train my software knowledge" << endl;
+    cout << "\n---------------------------------------" << endl;
+    
+    char selection {};
+    vector<int> data;
+    
+    do {
+        cout << "Select from these options to get started!" << endl;
+        cout << "A - Add data" << endl;
+        cout << "D - Display data" << endl;
+        cout << "Q - Quit Program";
+        cout << "\nEnter in your option: ";
+        cin >> selection;
+        
+        //switching options
+        switch (selection) {
+            case 'a':
+            case 'A':
+                {
+                cout << "Enter a numbered value: ";
+                int number{};
+                cin >> number;
+                cout << "Adding " << number << endl;
+                data.push_back(number);
+                }
+                break;
+            case 'd':
+            case 'D':
+                cout << "\nDisplaying Data!" << endl;
+                cout << "\n---------------------------------------" << endl;
+                if (data.size() == 0) {
+                    cout << "No data has been entered yet!" << endl;
+                } else {
+                    for (auto num: data) {
+                        cout << "[ ";
+                        cout << num;
+                        cout << "]";
+                    }
+                }
+                cout << "\n---------------------------------------" << endl;
+                break;
+            default:
+                cout << "\n---------------------------------------" << endl;
+                cout << "Quiting Program -- See you again!" << endl;
+                cout << "\n---------------------------------------" << endl;
+        }
+    } while (selection !='q' && selection !='Q'); {
+        cout << "Goodbye!" << endl;
+        cout << endl;
+    }
+    
+    
+    return 0;
+}
